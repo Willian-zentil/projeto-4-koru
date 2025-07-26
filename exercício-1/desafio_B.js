@@ -1,38 +1,38 @@
+// Atividade feita por Michelle
 // Exercício 1: Revisão de funções, spread e rest
+//b. Crie uma função que aceita múltiplos arrays como parâmetros e retorna um array combinado com todos os elementos (use rest e spread)
 
-// 1. Função tradicional
-function sum(a, b) {
-  return a + b;
-}
+function matchUsers(...usersList) {
+  const usersAll = [].concat(...usersList);
+  const usersValid = [];
 
-// 2. Arrow function
-const multiply = (a, b) => a * b;
-
-// 3. Função com rest parameters
-function calculateAverage(...numbers) {
-  if (numbers.length === 0) return 0;
-
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
+  for (let i = 0; i < usersAll.length; i++) {
+    const users = usersAll[i];
+    if (users.name && users.email) {
+      usersValid.push(users);
+    }
   }
-
-  return sum / numbers.length;
+  return usersValid;
 }
 
-// 4. Usando spread operator com arrays
-const fruits = ["maçã", "banana", "laranja"];
-const moreFruits = ["uva", "kiwi"];
-const allFruits = [...fruits, ...moreFruits];
+const usersForm = [
+  {name:"Joana", email: "anadarc123@gmail.com"},
+  {name:"Otávio", email: ""}
+];
 
-// 5. Usando spread com objetos
-const person = { name: "Maria", age: 25 };
-const employee = { ...person, id: 1001, department: "Engenharia" };
+const usersImport = [
+  {name: "John", email: "jhonny@gmail.com"},
+  {name: "", email: "someone@gmail.com"}
+];
 
-// Testando as funções
-console.log("Soma:", sum(5, 3));
-console.log("Multiplicação:", multiply(5, 3));
-console.log("Média de 3 números:", calculateAverage(4, 6, 8));
-console.log("Média de 5 números:", calculateAverage(4, 6, 8, 10, 12));
-console.log("Frutas combinadas:", allFruits);
-console.log("Objeto funcionário:", employee);
+const usersAPI = [
+  {name: "Sarah", email:"sara@gmail.com"}
+];
+
+const usersFinal = matchUsers(usersForm, usersImport, usersAPI);
+
+console.log("Usuários com cadastro completo:", usersFinal);
+
+
+
+
