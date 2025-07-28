@@ -1,4 +1,4 @@
-// Exercício 4: findIndex, some e every
+// Exercício 4: findIndex, some e every - Vinnie
 
 const tasks = [
   { id: 1, title: "Concluir projeto", completed: false, priority: "alta" },

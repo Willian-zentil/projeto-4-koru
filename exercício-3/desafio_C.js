@@ -1,4 +1,4 @@
-// Exercício 3: filter e find
+// Exercício 3: filter e find - Vinnie
 
 const students = [
   { id: 1, name: "João", age: 20, grades: [85, 90, 78], active: true },

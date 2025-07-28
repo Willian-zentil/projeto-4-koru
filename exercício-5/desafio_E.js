@@ -1,4 +1,4 @@
-// Exercício 5: Desafio Integrador - E-commerce
+// Exercício 5: Desafio Integrador - E-commerce - Vinnie
 
 const inventory = [
   {
